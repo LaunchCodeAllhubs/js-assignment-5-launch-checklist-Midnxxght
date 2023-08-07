@@ -26,9 +26,22 @@ function validateInput(valueInput) {
    }
 }
 
-function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    event.preventDefault();
-   const pilotValid = validateInput()
+function formSubmission(document, pilot, copilot, fuelLevel, cargoLevel) {   
+   const pilotValid = validateInput(pilot);
+   const copilotValid = validateInput(copilot);
+   const fuelLevelValid = validateInput(fuelLevel);
+   const cargoLevelValid = validateInput(cargoLevel);
+
+   if (pilotValid === "Empty" || copilotValid === "Empty" || fuelLevelValid === "Empty" || cargoLevelValid ==="Empty"){
+    alert("ALL FIELDS REQURED!!");
+    return;
+   }
+
+   if(fuelLevelValid !== "Is a Number" || cargoLevelValid !== "Is a Number"){
+    alert("FUEL AND CARGO MUST BE NUMBERS!!!")
+    return;
+   }
+
 }
 
 async function myFetch() {
