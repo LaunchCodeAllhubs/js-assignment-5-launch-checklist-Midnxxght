@@ -2,18 +2,19 @@
 require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
+    const missionTarget = document.getElementById("missionTarget");
    // Here is the HTML formatting for our mission target div.
-   /*
+    missionTarget.innerHTML = `
                 <h2>Mission Destination</h2>
                 <ol>
-                    <li>Name: </li>
-                    <li>Diameter: </li>
+                    <li>Name:${name} </li>
+                    <li>Diameter:${diameter} </li>
                     <li>Star: ${star}</li>
-                    <li>Distance from Earth: </li>
-                    <li>Number of Moons: </li>
+                    <li>Distance from Earth:${distance} </li>
+                    <li>Number of Moons:${moons} </li>
                 </ol>
-                <img src="">
-   */
+                <img src="${imageYrl}">
+    `;
 }
 
 function validateInput(valueInput) {
@@ -63,18 +64,27 @@ function formSubmission(document, pilot, copilot, fuelLevel, cargoLevel) {
     document.getElementById("cargoStatus").textContent = "Cargo mass low enough for launch."
    }
 
+   if (fuelLevel >= 10000 && cargoLevel <= 10000){
+    document.getElementById("faultyItems").style.visibility="hidden";
+    document.getElementById("launchStatus").textContent = "Shuttle is ready!";
+    document.getElementById("launchStatus").style.color = "#419F6A"
+   }
+
 }
 
 async function myFetch() {
+    const  response =  await fetch ("https://handlers.education.launchcode.org/static/planets.json");
     let planetsReturned;
 
-    planetsReturned = await fetch().then( function(response) {
-        });
+    planetsReturned = await response.json()
 
     return planetsReturned;
 }
 
 function pickPlanet(planets) {
+    const randomIndex = Math.floor(Math.random()*planets.length);
+    const randomPlanet = planets[randomIndex];
+    return randomPlanetl;
 }
 
 module.exports.addDestinationInfo = addDestinationInfo;
