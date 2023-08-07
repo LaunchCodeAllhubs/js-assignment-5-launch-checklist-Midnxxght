@@ -16,7 +16,7 @@ window.addEventListener("load", function() {
    })
    
    const form = document.querySelector("form[data-testid='testForm']");
-   form.addEventListener("sumbit",function(event){
+   form.addEventListener("submit",function(event){
     event.preventDefault();
     const pilotName = document.getElementById("pilotName").value;
     const copilotName = document.getElementById("copilotName").value;
