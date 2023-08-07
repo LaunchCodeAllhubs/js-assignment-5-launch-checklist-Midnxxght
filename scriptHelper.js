@@ -27,7 +27,8 @@ function validateInput(valueInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   
+    event.preventDefault();
+   const pilotValid = validateInput()
 }
 
 async function myFetch() {
