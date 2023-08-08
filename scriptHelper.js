@@ -27,7 +27,7 @@ function validateInput(inputValue) {
    }
 }
 
-function formSubmission(document, pilot, copilot, fuelLevel, cargoLevel){
+function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel){
    const pilotValid = validateInput(pilot);
    const copilotValid = validateInput(copilot);
    const fuelLevelValid = validateInput(fuelLevel);
@@ -43,25 +43,25 @@ function formSubmission(document, pilot, copilot, fuelLevel, cargoLevel){
     return;
    }
    
-   document.getElementById("pilotStatus").textContent =  `Pilot ${pilot} is ready for launch.`;
-   document.getElementById("copilotStatus").textContent =  `Co-pilot ${copilot} is ready for launch.`;
+   document.getElementById("pilotStatus").textContent =  `Pilot is ready`;
+   document.getElementById("copilotStatus").textContent =  `Co-pilot is ready`;
 
    if (fuelLevel < 10000) {
-    document.getElementById("fuelStatus").textContent = "Fuel level too low for launch.";
+    document.getElementById("fuelStatus").textContent = "Fuel level too low for launch";
     document.getElementById("faultyItems").style.visibility = "visible";
-    document.getElementById("launchStatus").textContent = "Shuttle Not Ready for Launch!";
+    document.getElementById("launchStatus").textContent = "Shuttle Not Ready for Launch";
     document.getElementById("launchStatus").style.color = "#C7254E";
    } else {
-    document.getElementById("fuelStatus").textContent = "Fuel level high enough for launch."
+    document.getElementById("fuelStatus").textContent = "Fuel level high enough for launch"
    }
 
    if (cargoLevel > 10000) {
-    document.getElementById("cargoStatus").textContent = "Cargo mass to high for launch.";
+    document.getElementById("cargoStatus").textContent = "Cargo mass too heavy for launch";
     document.getElementById("faultyItems").style.visibility = "visible";
-    document.getElementById("launchStatus").textContent = "Shuttle Not Ready for Launch!";
+    document.getElementById("launchStatus").textContent = "Shuttle Not Ready for Launch";
     document.getElementById("launchStatus").style.color = "#C7254E";
    } else {
-    document.getElementById("cargoStatus").textContent = "Cargo mass low enough for launch."
+    document.getElementById("cargoStatus").textContent = "Cargo mass low enough for launch"
    }
 
    if (fuelLevel >= 10000 && cargoLevel <= 10000){
