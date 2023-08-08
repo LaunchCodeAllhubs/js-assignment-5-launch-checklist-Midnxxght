@@ -43,8 +43,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel){
     return;
    }
    
-   document.getElementById("pilotStatus").textContent =  `Pilot is ready`;
-   document.getElementById("copilotStatus").textContent =  `Co-pilot is ready`;
+   document.getElementById("pilotStatus").textContent =  `Pilot ${pilot} is ready for launch.`;
+   document.getElementById("copilotStatus").textContent =  `Co-pilot ${copilot} is ready for launch.`;
 
    if (fuelLevel < 10000) {
     document.getElementById("fuelStatus").textContent = "Fuel level too low for launch";
