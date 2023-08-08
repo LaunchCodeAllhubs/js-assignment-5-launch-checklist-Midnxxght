@@ -21,7 +21,6 @@ window.addEventListener("load", function() {
    const form = document.querySelector("form");
    form.addEventListener("submit",function(event){
     event.preventDefault();
-    console.log("YUH")
     const pilotName = document.getElementById("pilotName").value;
     const copilotName = document.getElementById("copilotName").value;
     const fuelLevel = document.getElementById("fuelLevel").value;
