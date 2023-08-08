@@ -13,21 +13,21 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                     <li>Distance from Earth:${distance} </li>
                     <li>Number of Moons:${moons} </li>
                 </ol>
-                <img src="${imageYrl}">
+                <img src="${imageUrl}">
     `;
 }
 
-function validateInput(valueInput) {
-   if(valueInput === ""){
+function validateInput(inputValue) {
+   if(inputValue === ""){
     return "Empty";
-   } else if (isNaN(valueInput)) {
+   } else if (isNaN(inputValue)) {
     return "Not a Number";
    } else {
     return "Is a Number";
    }
 }
 
-function formSubmission(document, pilot, copilot, fuelLevel, cargoLevel) {   
+function formSubmission(document, pilot, copilot, fuelLevel, cargoLevel){
    const pilotValid = validateInput(pilot);
    const copilotValid = validateInput(copilot);
    const fuelLevelValid = validateInput(fuelLevel);
@@ -84,7 +84,7 @@ async function myFetch() {
 function pickPlanet(planets) {
     const randomIndex = Math.floor(Math.random()*planets.length);
     const randomPlanet = planets[randomIndex];
-    return randomPlanetl;
+    return randomPlanet;
 }
 
 module.exports.addDestinationInfo = addDestinationInfo;
