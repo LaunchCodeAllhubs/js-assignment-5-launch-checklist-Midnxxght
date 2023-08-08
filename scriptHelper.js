@@ -14,7 +14,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                     <li>Number of Moons:${moons} </li>
                 </ol>
                 <img src="${imageUrl}">
-    `;
+                `;
 }
 
 function validateInput(inputValue) {
@@ -78,10 +78,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel){
 
 async function myFetch() {
     const  response =  await fetch ("https://handlers.education.launchcode.org/static/planets.json");
-    let planetsReturned;
-
-    planetsReturned = await response.json()
-
+    let planetsReturned = await response.json()
     return planetsReturned;
 }
 
