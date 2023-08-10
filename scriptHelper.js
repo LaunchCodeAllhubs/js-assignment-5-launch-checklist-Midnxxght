@@ -42,7 +42,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel){
     alert("FUEL AND CARGO MUST BE NUMBERS!!!")
     return;
    }
-   document.getElementById("faultyItems").style.visibility="hidden";
+   document.getElementById ("faultyItems").style.visibility = "hidden";
    document.getElementById("pilotStatus").textContent =  `Pilot ${pilot} is ready for launch`;
    document.getElementById("copilotStatus").textContent =  `Co-pilot ${copilot} is ready for launch`;
    document.getElementById("fuelStatus").textContent = "Fuel level high enough for launch";
@@ -67,11 +67,11 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel){
    }
 
    if (fuelLevel >= 10000 && cargoLevel <= 10000){
-    document.getElementById("faultyItems").style.visibility="visible";
+    document.getElementById("faultyItems").style.visibility= "visible";
     document.getElementById("launchStatus").textContent = "Shuttle is Ready for Launch";
     document.getElementById("launchStatus").style.color = "#419F6A";
    } else {
-    document.getElementById("faultyItems").style.visibility="visible";
+    document.getElementById("faultyItems").style.visibility= "visible";
     document.getElementById("launchStatus").textContent = "Shuttle Not Ready for Launch";
     document.getElementById("launchStatus").style.color = "#C7254E";
    }
