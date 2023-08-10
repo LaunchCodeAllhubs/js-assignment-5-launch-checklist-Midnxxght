@@ -32,6 +32,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel){
    const copilotValid = validateInput(copilot);
    const fuelLevelValid = validateInput(fuelLevel);
    const cargoLevelValid = validateInput(cargoLevel);
+   document.getElementById("faultyItems").style.visibility= "hidden";
 
    if (pilotValid === "Empty" || copilotValid === "Empty" || fuelLevelValid === "Empty" || cargoLevelValid ==="Empty"){
     alert("ALL FIELDS REQURED!!");
@@ -48,7 +49,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel){
 
    if (fuelLevel < 10000) {
     document.getElementById("fuelStatus").textContent = "Fuel level too low for launch";
-    document.getElementById("faultyItems").style.visibility = "hideen";
+    // document.getElementById("faultyItems").style.visibility = "visible";
     document.getElementById("launchStatus").textContent = "Shuttle Not Ready for Launch";
     document.getElementById("launchStatus").style.color = "#C7254E";
    } else {
@@ -57,7 +58,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel){
 
    if (cargoLevel > 10000) {
     document.getElementById("cargoStatus").textContent = "Cargo mass too heavy for launch";
-    document.getElementById("faultyItems").style.visibility = "hidden";
+    // document.getElementById("faultyItems").style.visibility = "visible";
     document.getElementById("launchStatus").textContent = "Shuttle Not Ready for Launch";
     document.getElementById("launchStatus").style.color = "#C7254E";
    } else {
