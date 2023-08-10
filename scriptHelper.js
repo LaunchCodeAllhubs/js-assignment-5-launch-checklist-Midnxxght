@@ -68,10 +68,12 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel){
     document.getElementById("faultyItems").style.visibility="hidden";
     document.getElementById("launchStatus").textContent = "Shuttle is Ready for Launch";
     document.getElementById("launchStatus").style.color = "#419F6A"
+    document.getElementById("list").style.visibility="hidden";
    } else {
     document.getElementById("faultyItems").style.visibility="visible";
     document.getElementById("launchStatus").textContent = "Shuttle Not Ready for Launch";
     document.getElementById("launchStatus").style.color = "#C7254E"
+    document.getElementById("list").style.visibility="visible";
    }
 
 }
