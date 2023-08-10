@@ -42,7 +42,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel){
     alert("FUEL AND CARGO MUST BE NUMBERS!!!")
     return;
    }
-   
+   document.getElementById("faultyItems").style.visibility="hidden";
    document.getElementById("pilotStatus").textContent =  `Pilot ${pilot} is ready for launch`;
    document.getElementById("copilotStatus").textContent =  `Co-pilot ${copilot} is ready for launch`;
    document.getElementById("fuelStatus").textContent = "Fuel level high enough for launch";
