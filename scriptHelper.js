@@ -42,10 +42,9 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel){
     alert("FUEL AND CARGO MUST BE NUMBERS!!!")
     return;
    }
+   list.syle.visibility("hidden");
    document.getElementById("pilotStatus").textContent =  `Pilot ${pilot} is ready for launch`;
    document.getElementById("copilotStatus").textContent =  `Co-pilot ${copilot} is ready for launch`;
-   document.getElementById("fuelStatus").textContent = "Fuel level high enough for launch";
-   document.getElementById("cargoStatus").textContent = "Cargo mass low enough for launch";
 
    if (fuelLevel < 10000) {
     document.getElementById("fuelStatus").textContent = "Fuel level too low for launch";

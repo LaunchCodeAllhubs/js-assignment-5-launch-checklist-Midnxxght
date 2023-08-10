@@ -21,7 +21,6 @@ window.addEventListener("load", function() {
    const form = document.querySelector("form");
    form.addEventListener("submit",function(event){
     event.preventDefault();
-    document.getElementById("faultyItems").style.visibility= "hidden";
     const pilotName = document.querySelector("input[name=pilotName]").value;
     const copilotName = document.querySelector("input[name=copilotName]").value;
     const fuelLevel = document.querySelector("input[name=fuelLevel]").value;
