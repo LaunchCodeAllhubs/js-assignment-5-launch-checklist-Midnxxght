@@ -26,7 +26,6 @@ function validateInput(inputValue) {
     return "Is a Number";
    }
 }
-
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel){
    const pilotValid = validateInput(pilot);
    const copilotValid = validateInput(copilot);
@@ -43,6 +42,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel){
     alert("FUEL AND CARGO MUST BE NUMBERS!!!")
     return;
    }
+   
    document.getElementById("pilotStatus").textContent =  `Pilot ${pilot} is ready for launch`;
    document.getElementById("copilotStatus").textContent =  `Co-pilot ${copilot} is ready for launch`;
 

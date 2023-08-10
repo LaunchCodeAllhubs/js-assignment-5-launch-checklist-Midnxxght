@@ -3,7 +3,7 @@
 // const { formSubmission, myFetch, pickPlanet, addDestinationInfo } = require("./scriptHelper");
 
 window.addEventListener("load", function() {
-
+   document.getElementById("faultyItems").style.visibility= "hidden";
    let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
    let listedPlanetsResponse = myFetch();
@@ -17,7 +17,6 @@ window.addEventListener("load", function() {
         addDestinationInfo(document, planet.name, planet.diameter, planet.star, planet.distance, planet.moons, planet.image)
     })
 
-   list.style.visibility = ('hidden');
    const form = document.querySelector("form");
    form.addEventListener("submit",function(event){
     event.preventDefault();
@@ -25,7 +24,7 @@ window.addEventListener("load", function() {
     const copilotName = document.querySelector("input[name=copilotName]").value;
     const fuelLevel = document.querySelector("input[name=fuelLevel]").value;
     const cargoLevel = document.querySelector("input[name=cargoMass]").value;
-   
+   document.getElementById("faultyItems").style.visibility= "hidden";
     
     formSubmission(document, listedPlanets, pilotName, copilotName, fuelLevel, cargoLevel);
    });
