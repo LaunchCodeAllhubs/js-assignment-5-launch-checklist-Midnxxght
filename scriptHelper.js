@@ -26,7 +26,7 @@ function validateInput(inputValue) {
     return "Is a Number";
    }
 }
-document.getElementById("faultyItems").style.visibility= "hidden";
+
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel){
    const pilotValid = validateInput(pilot);
    const copilotValid = validateInput(copilot);
